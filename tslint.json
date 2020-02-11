@@ -1,0 +1,206 @@
+{
+  "rulesDirectory": [
+    "node_modules/codelyzer",
+    "node_modules/rxjs-tslint"
+  ],
+  "rules": {
+    "## NG 02-03 01": "在符号名后面追加约定的类型后缀(Component)",
+    "component-class-suffix": [
+      true,
+      "Component"
+    ],
+    "## NG 02-03 02": "在符号名后面追加约定的类型后缀(Directive)",
+    "directive-class-suffix": [
+      true,
+      "Directive"
+    ],
+    "## NG 05-04": "超过 3 行时，把模板和样式提取到一个单独的文件",
+    "max-inline-declarations": true,
+    "## NG 05-12 01": "使用 @Input 和 @Output，而非 @Directive 和 @Component 装饰器的 inputs 和 outputs 属性",
+    "use-input-property-decorator": true,
+    "use-output-property-decorator": true,
+    "## NG 05-12 02": "把 @Input 或者 @Output 放到所装饰的属性的同一行",
+    "prefer-inline-decorator": true,
+    "## NG 05-16": "不要给输出属性加 on 前缀",
+    "no-output-on-prefix": true,
+    "## NG 06-03": "使用 @HostListener 和 @HostBinding，而不是 @Directive 和 @Component 装饰器的 host 属性",
+    "use-host-property-decorator": true,
+    "## NG 09-01": "实现生命周期钩子接口",
+    "use-life-cycle-interface": true,
+    "__ 0": "****************************************************************************",
+    "## Codelyzer 001": "禁止使用 @Attribute，使用 @Input 替代",
+    "no-attribute-parameter-decorator": true,
+    "## Codelyzer 002": "输出属性禁止命名为标准DOM事件名",
+    "no-output-named-after-standard-event": true,
+    "## Codelyzer 003": "管道必须实现 PipeTransform 接口",
+    "use-pipe-transform-interface": true,
+    "## Codelyzer 004": "使用 @ContentChild、@ViewChild 等，而不是 @Directive 和 @Component 装饰器的 queries 属性",
+    "no-queries-parameter": true,
+    "## Codelyzer 005": "验证双向绑定语法错误，如 ([ngModel]) 应写成 [(ngModel)] ",
+    "banana-in-box": true,
+    "## Codelyzer 006": "生命周期钩子使用在合法的位置(Directive，Component)",
+    "contextual-life-cycle": true,
+    "## Codelyzer 007": "import {a, b} 语句 {} 左右必须各有一个空格，如 { a, b }",
+    "import-destructuring-spacing": true,
+    "__ 1": "****************************************************************************",
+    "## TSLint 001": "成员访问性关键字控制，禁止使用 public，因为默认就是 public",
+    "member-access": [
+      true,
+      "no-public"
+    ],
+    "## TSLint 002": "成员排列顺序。public-instance-method 有歧义，@HostListener 等绑定的方法在构造函数前面，其他在构造函数后面",
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "public-instance-field",
+          "protected-instance-field",
+          "private-instance-field",
+          "public-constructor",
+          "protected-constructor",
+          "private-constructor",
+          "protected-instance-method",
+          "private-instance-method"
+        ]
+      }
+    ],
+    "## TSLint 003": "重载(overloading)的方法靠一起",
+    "adjacent-overload-signatures": true,
+    "## TSLint 004": "禁止非空断言操作符!",
+    "no-non-null-assertion": true,
+    "## TSLint 006": "禁止使用 /// <reference path=> 导入，用 import 替代",
+    "no-reference": true,
+    "## TSLint 007": "for(i,len;i<len;i++) arr[i]，当i仅仅用于数组迭代，用 for(of) 替代",
+    "prefer-for-of": true,
+    "## TSLint 008": "类型声明的冒号前后是否需要空格",
+    "typedef-whitespace": [
+      true,
+      {
+        "call-signature": "nospace",
+        "index-signature": "nospace",
+        "parameter": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      },
+      {
+        "call-signature": "onespace",
+        "index-signature": "onespace",
+        "parameter": "onespace",
+        "property-declaration": "onespace",
+        "variable-declaration": "onespace"
+      }
+    ],
+    "## TSLint 009": "禁止逗号运算符",
+    "ban-comma-operator": true,
+    "## TSLint 010": "for、if、do、while 要有花括号",
+    "curly": true,
+    "## TSLint 011": "label 只允许出现在合法的地方，do-while、for、while、switch",
+    "label-postion": true,
+    "## TSLint 012": "禁止使用 argument.callee",
+    "no-arg": true,
+    "## TSLint 013": "禁止使用 console",
+    "no-console": true,
+    "## TSLint 014": "禁止使用 String/Number/Boolean 的构造函数，如使用 String('123') 替代 new String('123')",
+    "no-construct": true,
+    "## TSLint 015": "禁止使用 debugger",
+    "no-debugger": true,
+    "## TSLint 017": "禁止使用 eval",
+    "no-eval": true,
+    "## TSLint 018": "禁止使用 for(in) 遍历数组",
+    "no-for-in-array": true,
+    "## TSLint 019": "禁止 switch-case 隐式贯穿。若需隐式贯穿，在代码后面加 /* falls through */ 注释",
+    "no-switch-case-fall-through": true,
+    "## TSLint 020": "禁止在 finally 代码块中使用控制流语句，如 return、continue、break、throws",
+    "no-unsafe-finally": true,
+    "## TSLint 021": "禁止使用 var 关键字，用 let、const 替代",
+    "no-var-keyword": true,
+    "## TSLint 022": "设置行最大代码长度",
+    "max-line-length": [
+      true,
+      {
+        "limit": 120,
+        "ignore-pattern": "(^import)|(^export {(.*?)})|(//)|(/\\*(.*?)\\*/)|(\\*\\s*[^\\d\\s]+)"
+      }
+    ],
+    "## TSLint 023": "禁止尾后逗号",
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "never",
+        "singleline": "never"
+      }
+    ],
+    "## TSLint 024": "class、interface 名称使用 PascalCased 命名",
+    "class-name": true,
+    "## TSLint 025": "单行注释(//)必须由空格开头",
+    "comment-format": [
+      true,
+      "check-space"
+    ],
+    "## TSLint 026": "import {} from 语句确保相互间隔有且仅有一个空格",
+    "import-spacing": true,
+    "## TSLint 027": "块中除非只有一行代码，否则 return 语句前必须空一行",
+    "newline-before-return": true,
+    "## TSLint 028": "禁止调用构造函数时省略括号，如使用 new User() 替代 new User",
+    "new-parens": true,
+    "## TSLint 029": "强制代码中空行最多只有一行",
+    "no-consecutive-blank-lines": true,
+    "## TSLint 030": "禁止行末空格",
+    "no-trailing-whitespace": [
+      true,
+      "ignore-template-strings",
+      "ignore-blank-lines",
+      "ignore-comments",
+      "ignore-jsdoc"
+    ],
+    "## TSLint 031": "禁止无意义的初始化，如 let x = undefined",
+    "no-unnecessary-initializer": true,
+    "## TSLint 032": "禁止浮点数省略前导0(.1)或添加多余的后导0(0.10)",
+    "number-literal-format": true,
+    "## TSLint 033": "强制使用对象字面量简写语法，如 { x: x } 应写成 { x }",
+    "object-literal-shorthand": true,
+    "## TSLint 034": "强制字符串使用单引号",
+    "quotemark": [
+      true,
+      "single",
+      "avoid-escape"
+    ],
+    "## TSLint 035": "强制代码末尾有分号",
+    "semicolon": true,
+    "## TSLint 036": "函数和括号之间是否有空格",
+    "space-before-function-paren": [
+      true,
+      {
+        "anonymous": "always",
+        "asyncArrow": "always",
+        "named": "never",
+        "method": "never",
+        "constructor": "never"
+      }
+    ],
+    "## TSLint 038": "空格检查",
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-module",
+      "check-separator",
+      "check-rest-spread",
+      "check-type",
+      "check-type-operator",
+      "check-preblock"
+    ],
+    "## TSLint 039": "使用 === 和 !== 替代 == 和 !=",
+    "triple-equals": true,
+    "__ 2": "****************************************************************************",
+    "## Rxjs 001": "合并 import",
+    "rxjs-collapse-imports": true,
+    "## Rxjs 002": "强制使用 pipe 方式",
+    "rxjs-pipeable-operators-only": true,
+    "## Rxjs 003": "禁止静态方式调用 Observable",
+    "rxjs-no-static-observable-methods": true,
+    "## Rxjs 004": "该变 rxjs5 导入方式为 rxjs6",
+    "rxjs-proper-imports": true
+  }
+}
