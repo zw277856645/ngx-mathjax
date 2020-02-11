@@ -21,7 +21,6 @@ module.exports = webpackMerge(commonConfig, {
             output: 'index.html',
             entrypoints: [
                 'polyfills',
-                'vendor',
                 'app'
             ]
         }),

@@ -7,8 +7,7 @@
     "publish": "npm publish dist --access public",
     "clean": "rimraf dist",
     "lint": "tslint -c tslint.json -p tsconfig.json",
-    "demo": "webpack-dev-server --config demo/config/webpack.dev.js --progress --open --profile --watch",
-    "demo:build": "webpack --config demo/config/webpack.prod.js --progress"
+    "demo": "webpack-dev-server --config demo/config/webpack.dev.js --progress --open --profile --watch"
   },
   "$schema": "./node_modules/ng-packagr/package.schema.json",
   "ngPackage": {
@@ -72,7 +71,6 @@
     "rimraf": "2.6.1",
     "rxjs": "6.5.1",
     "rxjs-tslint": "0.1.7",
-    "semantic-ui-css": "2.2.12",
     "to-string-loader": "1.1.5",
     "ts-loader": "5.4.4",
     "tslint": "5.11.0",

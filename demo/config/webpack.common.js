@@ -10,7 +10,6 @@ module.exports = {
 
     entry: {
         'polyfills': './demo/polyfills.ts',
-        'vendor': './demo/vendor.ts',
         'app': './demo/main.ts'
     },
 
@@ -41,32 +40,6 @@ module.exports = {
                     'postcss-loader',
                     'less-loader'
                 ]
-            },
-            {
-                test: /(?<!(component|semantic))\.(css|less)$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'postcss-loader',
-                    'less-loader'
-                ]
-            },
-            // semantic-ui-css google fonts 特殊处理，less-loader 对 url fonts 处理有 bug
-            {
-                test: /semantic\.css$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader'
-                ]
-            },
-            // 资源转换成base64，超出limit交给file-loader处理
-            {
-                test: /\.(png|svg|jpe?g|gif|woff|woff2|eot|ttf|ico)$/,
-                loader: 'url-loader',
-                options: {
-                    name: 'asset/[name].[hash].[ext]',
-                    limit: 100000
-                }
             },
             // 隐藏webpack抛出的deprecation警告
             {
