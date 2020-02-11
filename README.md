@@ -9,14 +9,14 @@
 引入module
 
 ``` js
-import { MathjaxModule } from '@demacia/ngx-mathjax';
+import { MathjaxModule, MATH_JAX_CONFIG } from '@demacia/ngx-mathjax';
 
 @NgModule({
     imports: [
         MathjaxModule
     ],
         
-    /* 修改默认配置（可选），详情参考 [Mathjax Docs](https://docs.mathjax.org/en/v2.7-latest/configuration.html)
+    /* 修改默认配置（可选），详情参考 https://docs.mathjax.org/en/v2.7-latest/configuration.html
      *
      *  默认配置如下：
      *  {
@@ -59,5 +59,6 @@ export class AppModule {
 ```
 
 ## 🔗 链接
-- [Mathjax Docs](https://docs.mathjax.org/en/v2.7-latest/index.html)(`本插件依赖的 mathjax 版本为 2.7，注意 3.x 版本与 2.x 版本不兼容，请参考 2.x 版本的文档`)
+- [Mathjax Docs](https://docs.mathjax.org/en/v2.7-latest/index.html) 
+`本插件依赖的 mathjax 版本为 2.7，注意 3.x 版本与 2.x 版本不兼容，请参考 2.x 版本的文档`
 - [LaTeX 公式示例](https://www.jianshu.com/p/a7fa1ed4ca20)
