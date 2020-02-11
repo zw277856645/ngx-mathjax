@@ -2,21 +2,27 @@ import { Inject, InjectionToken, NgModule, Optional } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MathjaxComponent } from './mathjax.component';
 import { deepExtend } from '@demacia/cmjs-lib';
-import Config = MathJax.Config;
 
-export const MATH_JAX_CONFIG = new InjectionToken<Config>('mathjax.config');
+export const MATH_JAX_CONFIG = new InjectionToken<MathJax.Config>('mathjax.config');
 
 @NgModule({
-    imports: [ CommonModule ],
-    declarations: [ MathjaxComponent ],
-    exports: [ MathjaxComponent ]
+    imports: [
+        CommonModule
+    ],
+    declarations: [
+        MathjaxComponent
+    ],
+    exports: [
+        CommonModule,
+        MathjaxComponent
+    ]
 })
 export class MathjaxModule {
 
-    constructor(@Optional() @Inject(MATH_JAX_CONFIG) config: Config) {
+    constructor(@Optional() @Inject(MATH_JAX_CONFIG) config: MathJax.Config) {
         // 插入配置参数脚本
         (() => {
-            const defaultConfig: Config = {
+            const defaultConfig: MathJax.Config = {
                 config: [ 'TeX-AMS_HTML.js' ],
                 skipStartupTypeset: true,
                 messageStyle: 'none',
