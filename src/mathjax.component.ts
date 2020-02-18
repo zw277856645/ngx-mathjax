@@ -1,5 +1,7 @@
-import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnDestroy, ViewChild } from '@angular/core';
-import { waitFor } from '@demacia/cmjs-lib';
+import {
+    AfterViewInit, Component, ElementRef, HostBinding, Input, OnChanges, OnDestroy, ViewChild
+} from '@angular/core';
+import { InputNumber, waitFor } from '@demacia/cmjs-lib';
 import { Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
@@ -14,6 +16,7 @@ export class MathjaxComponent implements OnDestroy, OnChanges, AfterViewInit {
     @ViewChild('dynamicExp', { static: false }) dynamicExp: ElementRef;
 
     @Input() expression: string;
+    @HostBinding('style.font-size.px') @Input() @InputNumber() fontSize = 16;
 
     private staticSub: Subscription;
     private dynamicSub: Subscription;

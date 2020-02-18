@@ -51,6 +51,12 @@ export class AppModule {
 <mathjax [expression]="'$$ ax^2 + bx + c = 0 $$'"></mathjax>
 ```
 
+字体大小（默认 16）
+
+``` html
+<mathjax fontSize="20">$$ ax^2 + bx + c = 0 $$</mathjax>
+```
+
 > angular 中默认花括号(`{}`)是默认插值表达式标记，所以如果数学公式中含有花括号时会报错，解决办法如下：  
 > 1、使用 `{{ '{}' }}` 转译 `{}`  
 > 2、使用转义字符，`&#123; = {`，`&#125; = }`
