@@ -1,9 +1,7 @@
-import { Inject, InjectionToken, NgModule, Optional } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MathjaxComponent } from './mathjax.component';
 import { deepExtend } from '@demacia/cmjs-lib';
-
-export const MATH_JAX_CONFIG = new InjectionToken<MathJax.Config>('mathjax.config');
 
 @NgModule({
     imports: [
@@ -19,7 +17,7 @@ export const MATH_JAX_CONFIG = new InjectionToken<MathJax.Config>('mathjax.confi
 })
 export class MathjaxModule {
 
-    constructor(@Optional() @Inject(MATH_JAX_CONFIG) config: MathJax.Config) {
+    static forRoot(config?: MathJax.Config): ModuleWithProviders {
         // 插入配置参数脚本
         (() => {
             const defaultConfig: MathJax.Config = {
@@ -48,5 +46,9 @@ export class MathjaxModule {
             script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js';
             document.getElementsByTagName('head')[ 0 ].appendChild(script);
         })();
+
+        return {
+            ngModule: MathjaxModule
+        };
     }
 }

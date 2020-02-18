@@ -10,7 +10,7 @@ import { MathjaxModule } from '../src/mathjax.module';
         CommonModule,
         FormsModule,
         BrowserModule,
-        MathjaxModule
+        MathjaxModule.forRoot()
     ],
     declarations: [
         AppComponent

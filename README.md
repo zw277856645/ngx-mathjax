@@ -13,33 +13,26 @@ import { MathjaxModule, MATH_JAX_CONFIG } from '@demacia/ngx-mathjax';
 
 @NgModule({
     imports: [
-        MathjaxModule
-    ],
-        
-    /* 修改默认配置（可选），详情参考 https://docs.mathjax.org/en/v2.7-latest/configuration.html
-     *
-     *  默认配置如下：
-     *  {
-     *      config: [ 'TeX-AMS_HTML.js' ],
-     *      skipStartupTypeset: true,
-     *      messageStyle: 'none',
-     *      tex2jax: {
-     *          inlineMath: [
-     *              [ '$', '$' ],
-     *              [ '\\(', '\\)' ]
-     *          ],
-     *          preview: 'none'
-     *      }
-     *  }
-     */
-    providers: [
-        {
-            provide: MATH_JAX_CONFIG,
-            useValue: {
-                config: [ 'TeX-AMS_SVG.js' ],
-                ...
-            }
-        }
+        /* 修改默认配置（可选），详情参考 https://docs.mathjax.org/en/v2.7-latest/configuration.html
+         *
+         *  默认配置如下：
+         *  {
+         *      config: [ 'TeX-AMS_HTML.js' ],
+         *      skipStartupTypeset: true,
+         *      messageStyle: 'none',
+         *      tex2jax: {
+         *          inlineMath: [
+         *              [ '$', '$' ],
+         *              [ '\\(', '\\)' ]
+         *          ],
+         *          preview: 'none'
+         *      }
+         *  }
+         */
+        MathjaxModule.forRoot({
+            config: [ 'TeX-AMS_SVG.js' ],
+            ...
+        })
     ]
 })
 export class AppModule {
