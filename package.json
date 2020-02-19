@@ -1,6 +1,6 @@
 {
   "name": "@demacia/ngx-mathjax",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Mathematical formulas deal with plugin",
   "scripts": {
     "build": "ng-packagr -p package.json",
